@@ -449,24 +449,24 @@ And then pass its path to `--bnb_quantization_config_path`:
   --gradient_checkpointing \
   --remote_text_encoder \
   --cache_latents \
-  --caption_column="prompt"\
+  --caption_column="caption"\
   **--bnb_quantization_config_path="config.json" \**
-  --dataset_name="linoyts/2000s_ads" \
-  --output_dir="2000s_ads_flux2_v1" \
-  --instance_prompt="2000s ads" \
+  --dataset_name="multimodalart/1920-raider-waite-tarot-public-domain" \
+  --output_dir="tarot_card_Flux2_LoRA" \
+  --instance_prompt="a tarot card" \
   --resolution=1024 \
-  --train_batch_size=1 \
+  --train_batch_size=2 \
   --guidance_scale=1 \
-  --gradient_accumulation_steps=4 \
+  --gradient_accumulation_steps=1 \
   --optimizer="adamW" \
   --use_8bit_adam\
   --learning_rate=1e-4 \
   --report_to="wandb" \
   --lr_scheduler="constant_with_warmup" \
-  --lr_warmup_steps=150 \
-  --max_train_steps=750 \
-  --validation_prompt="2000s ads, a coca cola ad featuring the backstreet boys jumping on a trampoline" \
-  --validation_epochs=25 \
+  --lr_warmup_steps=200 \
+  --max_train_steps=1000 \
+  --rank=8\
+  --validation_prompt="a trtcrd of a person on a computer, on the computer you see a meme being made with an ancient looking trollface, 'the shitposter' arcana, in the style of TOK a trtcrd, tarot style" \
   --seed="0"
 ```
 
